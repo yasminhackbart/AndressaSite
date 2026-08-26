@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import Logo from "./src/routes/logo.png"
+import Logo from "./routes/logo.png"
 
 const nav = [
   { to: "/", label: "Início" },
