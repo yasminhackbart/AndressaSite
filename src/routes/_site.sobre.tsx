@@ -36,7 +36,7 @@ function Sobre() {
             <div className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-gold/30 via-ember/20 to-transparent blur-xl" aria-hidden />
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-gold/30 bg-muted/40">
               <img
-                src="./src/assets/andressa.png"
+                src="andressa.png"
                 alt="Dra. Andressa Bederode, advogada"
                 className="h-full w-full object-cover"
               />
