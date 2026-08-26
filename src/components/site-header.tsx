@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logoAsset from "@/assets/logo.png.asset.json";
+import Logo from "./src/assets/logo.png.asset.json"
 
 const nav = [
   { to: "/", label: "Início" },
@@ -21,7 +22,7 @@ export function SiteHeader() {
       <div className="container-prose flex items-center justify-between py-4">
         <Link to="/" className="flex items-center gap-4 group" onClick={() => setOpen(false)}>
           <img
-            src="./src/assets/logo.png.asset.json"
+            src={Logo}
             alt="Logo Andressa Bederode Advocacia"
             className="h-30 w-30 object-cover rounded-xl"
           />
