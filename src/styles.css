@@ -1,0 +1,214 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@import "@fontsource/libre-baskerville/400.css";
+@import "@fontsource/libre-baskerville/700.css";
+@import "@fontsource/libre-baskerville/400-italic.css";
+@import "@fontsource/ibm-plex-sans/300.css";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-serif: "Libre Baskerville", Georgia, serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-ember: var(--ember);
+  --color-ember-soft: var(--ember-soft);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Core surface — deep charcoal/black */
+  --background: oklch(0.16 0.005 60);
+  --foreground: oklch(0.96 0.01 80);
+  --ink: oklch(0.11 0.005 60);
+  --ink-soft: oklch(0.21 0.006 60);
+
+  --card: oklch(0.20 0.006 60);
+  --card-foreground: oklch(0.96 0.01 80);
+  --popover: oklch(0.18 0.006 60);
+  --popover-foreground: oklch(0.96 0.01 80);
+
+  /* Gold = primary brand */
+  --gold: oklch(0.78 0.13 82);
+  --gold-soft: oklch(0.86 0.08 85);
+  --primary: oklch(0.78 0.13 82);
+  --primary-foreground: oklch(0.14 0.01 60);
+
+  /* Ember = accent */
+  --ember: oklch(0.68 0.17 45);
+  --ember-soft: oklch(0.76 0.13 50);
+  --accent: oklch(0.68 0.17 45);
+  --accent-foreground: oklch(0.14 0.01 60);
+
+  --secondary: oklch(0.24 0.006 60);
+  --secondary-foreground: oklch(0.96 0.01 80);
+  --muted: oklch(0.22 0.005 60);
+  --muted-foreground: oklch(0.72 0.015 80);
+
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --border: oklch(0.32 0.012 70 / 60%);
+  --input: oklch(0.32 0.012 70 / 60%);
+  --ring: oklch(0.78 0.13 82);
+
+  --shadow-gold: 0 20px 60px -20px oklch(0.78 0.13 82 / 0.35);
+  --shadow-ember: 0 20px 60px -20px oklch(0.68 0.17 45 / 0.45);
+  --gradient-hero: radial-gradient(ellipse at 20% 0%, oklch(0.68 0.17 45 / 0.18), transparent 55%),
+                   radial-gradient(ellipse at 80% 100%, oklch(0.78 0.13 82 / 0.15), transparent 60%),
+                   linear-gradient(180deg, oklch(0.13 0.005 60), oklch(0.16 0.005 60));
+  --gradient-gold: linear-gradient(135deg, oklch(0.86 0.08 85), oklch(0.72 0.14 78));
+  --gradient-ember: linear-gradient(135deg, oklch(0.76 0.13 50), oklch(0.62 0.18 40));
+  --rule-gold: linear-gradient(90deg, transparent, oklch(0.78 0.13 82 / 0.7), transparent);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility container-prose {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: 1.25rem;
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+@utility gold-rule {
+  height: 1px;
+  width: 100%;
+  background: var(--rule-gold);
+  border: 0;
+}
+
+@utility hero-surface {
+  background: var(--gradient-hero);
+}
+
+@utility btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius);
+  background: var(--gradient-gold);
+  color: var(--color-primary-foreground);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-gold);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  &:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+}
+
+@utility btn-ember {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius);
+  background: var(--gradient-ember);
+  color: oklch(0.99 0 0);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-ember);
+  transition: transform 0.2s ease, filter 0.2s ease;
+  &:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+}
+
+@utility btn-ghost-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--radius);
+  border: 1px solid oklch(0.78 0.13 82 / 0.5);
+  color: var(--color-gold);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  &:hover {
+    background: oklch(0.78 0.13 82 / 0.1);
+    border-color: var(--color-gold);
+  }
+}
+
+@utility card-area {
+  position: relative;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, oklch(0.22 0.006 60), oklch(0.18 0.005 60));
+  border: 1px solid oklch(0.32 0.012 70 / 0.5);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  &:hover {
+    border-color: oklch(0.78 0.13 82 / 0.6);
+    transform: translateY(-3px);
+  }
+}
