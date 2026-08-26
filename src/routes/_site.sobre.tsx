@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2, GraduationCap, Award, Users } from "lucide-react";
-
+import Andressa from "./andressa.png"
 
 export const Route = createFileRoute("/_site/sobre")({
   head: () => ({
@@ -36,7 +36,7 @@ function Sobre() {
             <div className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-gold/30 via-ember/20 to-transparent blur-xl" aria-hidden />
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-gold/30 bg-muted/40">
               <img
-                src="./andressa.png"
+                src={Andressa}
                 alt="Dra. Andressa Bederode, advogada"
                 className="h-full w-full object-cover"
               />
