@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroAsset from "@/assets/andressa-hero.png.asset.json";
+import AndressaFoto from "./andressaadv.png"
 const heroImg = heroAsset.url;
 import { ShieldCheck, Briefcase, Scale, HeartHandshake, ArrowRight, CheckCircle2, Quote } from "lucide-react";
  const endereco =
@@ -83,7 +84,7 @@ function Home() {
           <div className="relative flex justify-center">
             <div className="absolute -inset-6 rounded-3xl bg-[oklch(0.68_0.17_45/0.12)] blur-3xl" aria-hidden />
             <img
-              src="andressaadv.png"
+              src={AndressaFoto}
               alt="Dra. Andressa Bederode, advogada em Pelotas/RS"
               width={768}
               height={1024}
