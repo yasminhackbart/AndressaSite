@@ -83,7 +83,7 @@ function Home() {
           <div className="relative flex justify-center">
             <div className="absolute -inset-6 rounded-3xl bg-[oklch(0.68_0.17_45/0.12)] blur-3xl" aria-hidden />
             <img
-              src="./src/assets/logo.png"
+              src="andressaadv.png"
               alt="Dra. Andressa Bederode, advogada em Pelotas/RS"
               width={768}
               height={1024}
